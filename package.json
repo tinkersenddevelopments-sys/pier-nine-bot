@@ -1,0 +1,17 @@
+{
+  "name": "pier-nine-discord-bot",
+  "version": "1.0.0",
+  "description": "Pier Nine Discord bot -- /link and /stats",
+  "type": "module",
+  "main": "index.js",
+  "scripts": {
+    "start": "node index.js"
+  },
+  "dependencies": {
+    "discord.js": "^14.16.3",
+    "@supabase/supabase-js": "^2.45.4"
+  },
+  "engines": {
+    "node": ">=18.0.0"
+  }
+}
