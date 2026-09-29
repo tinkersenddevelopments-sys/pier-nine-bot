@@ -1,5 +1,6 @@
 import { Client, GatewayIntentBits, REST, Routes, SlashCommandBuilder, EmbedBuilder } from 'discord.js';
 import { createClient } from '@supabase/supabase-js';
+import { startWbossAnnouncer } from './wboss-announcer.js';
 
 const {
   DISCORD_TOKEN,
@@ -192,6 +193,8 @@ function startEventPoller() {
   setInterval(pollWorldEvents, EVENT_POLL_MS);
   pollSurgeCalendar();
   setInterval(pollSurgeCalendar, EVENT_POLL_MS);
+  // 29 Sep: The Colossal (world boss) -- 15-min warning, surfaced, result
+  startWbossAnnouncer(client, supabase, WORLD_EVENTS_CHANNEL_ID);
 }
 
 async function pollEvents() {
